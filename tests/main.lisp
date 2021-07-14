@@ -1,11 +1,9 @@
-(defpackage FIZZBUZZ/tests/main
+(defpackage fizzbuzz/tests/main
   (:use :cl
-        :FIZZBUZZ
-        :rove))
-(in-package :FIZZBUZZ/tests/main)
+        :fizzbuzz
+        :cl-quickcheck))
+(in-package :fizzbuzz/tests/main)
 
-;; NOTE: To run this test file, execute `(asdf:test-system :FIZZBUZZ)' in your Lisp.
+;; NOTE: To run this test file, execute `(asdf:test-system :fizzbuzz)' in your Lisp.
 
-(deftest test-target-1
-  (testing "should (= 1 1) to be true"
-    (ok (= 1 1))))
+
