@@ -34,7 +34,10 @@ Otherwise returns NUM unchanged."
 
 (defun fizzbuzz (lst)
   "Consumes a range of numbers in LST, but for multiples of three (3), print 'Fizz'
-instead of the number and for the multiples of five(5) print 'Buzz'"
+instead of the number and for the multiples of five(5) print 'Buzz'
+EXAMPLE:
+CL-USER> (fizzbuzz:fizzbuzz '(0 1 2 3 4 5 6 7 8 9))
+(\"FizzBuzz\" 1 2 \"Fizz\" 4 \"Buzz\" \"Fizz\" 7 8 \"Fizz\")"
     (mapcar #'fizzbuzzer lst))
 	      
       
