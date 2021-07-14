@@ -37,7 +37,10 @@ Otherwise returns NUM unchanged."
 instead of the number and for the multiples of five(5) print 'Buzz'
 EXAMPLE:
 CL-USER> (fizzbuzz:fizzbuzz '(0 1 2 3 4 5 6 7 8 9))
-(\"FizzBuzz\" 1 2 \"Fizz\" 4 \"Buzz\" \"Fizz\" 7 8 \"Fizz\")"
+(\"FizzBuzz\" 1 2 \"Fizz\" 4 \"Buzz\" \"Fizz\" 7 8 \"Fizz\")
+CL-USER> 
+CL-USER> (fizzbuzz:fizzbuzz '(-3 -2 -1 0 1 2 3))
+(\"Fizz\" -2 -1 \"FizzBuzz\" 1 2 \"Fizz\")"
     (mapcar #'fizzbuzzer lst))
 	      
       
