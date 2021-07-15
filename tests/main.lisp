@@ -44,4 +44,29 @@
 	(test (or fizzy buzzy
 		  (= i (parse-integer fizzless)))))))
 
+;;; IDEMPOTENCE
+    ;; Updating something to a given value
+    ;; Deleting a given object
+    ;; reading a given object / field
+
+
+;;; INVARIANCE
+    ;; Mutable systems, where precise assertions are hard.
+    ;; For all sequences of valid operations on a DB, the DB should never be corrupt.
+
+
+;;; METAMORPHIC RELATION
+    ;; Is there a couple of transformations such that applying one before the
+    ;; SUT and the other after doesn't change the outcome?
+    ;; Use cases:-
+    ;; Searches - for example, should results be different for a different sort order?
+
+    (named "Metamorphic FizzBuzz"
+      (for-all ((i an-integer))
+	;; For any number positive I, the invers -I, should return the same result
+	(only-if #'(lambda ()
+		     (string= "Fizz" (car (fizzbuzz (list i)))))
+		 (string= (car (fizzbuzz (list i)))
+			  (car (fizzbuzz (list (- i))))))))
+    
     ))
