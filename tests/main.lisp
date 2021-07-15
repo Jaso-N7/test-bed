@@ -2,13 +2,13 @@
   (:use :cl
         :fizzbuzz
         :cl-quickcheck)
-  (:export :run!)
+  (:export :check!)
   (:documentation "Property-Based Tests."))
 (in-package :fizzbuzz/tests)
 
 ;; NOTE: To run this test file, execute `(asdf:test-system :fizzbuzz)' in your Lisp.
 
-(defun run! ()
+(defun check! ()
   "Run ALL tests."
   ;; May do a seperate one for Example Based / Unit Tests
   ; (run-units)

@@ -18,4 +18,4 @@
                 :components
                 ((:file "main"))))
   :description "Test system for FIZZBUZZ"
-  :perform (test-op (op c) (symbol-call :fizzbuzz/tests :run!)))
+  :perform (test-op (op c) (symbol-call :fizzbuzz/tests :check!)))
