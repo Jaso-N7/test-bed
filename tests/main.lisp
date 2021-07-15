@@ -61,12 +61,11 @@
     ;; Use cases:-
     ;; Searches - for example, should results be different for a different sort order?
 
-    (named "Metamorphic FizzBuzz"
+    (named "Stability of FizzBuzz"
       (for-all ((i an-integer))
 	;; For any number positive I, the invers -I, should return the same result
-	(only-if #'(lambda ()
-		     (string= "Fizz" (car (fizzbuzz (list i)))))
-		 (string= (car (fizzbuzz (list i)))
-			  (car (fizzbuzz (list (- i))))))))
+	(test (equal (member "Fizz" (fizzbuzz (list i)) :test #'string=)
+		     (member "Fizz" (fizzbuzz (list (- i))) :test #'string=)))))
+	   
     
     ))
