@@ -32,4 +32,16 @@
 	      (item (car (fizzbuzz (list i)))))
 	  (test (find item seq :test #'string=)))))
 
+;;; INVERTIBILITY
+;; Example: (a + b) - b = a
+;; Encoder / Decorder pairs
+;; Persistence: Creation should have deletion as an inverse
+    (named "Partial Invertible FizzBuzz"
+      (for-all ((i an-integer))
+	(let ((fizzy (= (mod i 3) 0))
+	      (buzzy (= (mod i 5) 0))
+	      (fizzless (car (fizzbuzz (list i)))))
+	(test (or fizzy buzzy
+		  (= i (parse-integer fizzless)))))))
+
     ))
