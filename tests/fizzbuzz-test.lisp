@@ -55,6 +55,11 @@
 	(is= (reverse (fizzbuzz lis))
 	     (fizzbuzz (reverse lis)))))
 
+    (named "Some things never change"
+      (for-all ((lis (a-list an-integer)))
+	(is= (length lis)
+	     (length (fizzbuzz lis)))))
+
     
     (named "Stability of Fizz and Buzz"
       (for-all (m) 
