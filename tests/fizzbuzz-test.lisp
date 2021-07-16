@@ -50,13 +50,17 @@
     ;; Use cases:-
     ;; Searches - for example, should results be different for a different sort order?
 
-    (named "Stability of FizzBuzz"
-      (for-all ((i an-integer))
+    (named "Stability on FizzBuzz"
+      (for-all (m) 
 	;; For any number positive I, the invers -I, should return the same result
-	(test (and (equal (member "Fizz" (fizzbuzz (list i)) :test #'string=)
-			  (member "Fizz" (fizzbuzz (list (- i))) :test #'string=))
-		   (equal (member "Buzz" (fizzbuzz (list i)) :test #'string=)
-			  (member "Buzz" (fizzbuzz (list (- i))) :test #'string=))))))
+	(only-if (member "Fizz" (fizzbuzz (list m)) :test #'string=)
+		 (test (member "Fizz" (fizzbuzz (list (- m)))
+			       :test #'string=))))
+      (for-all (n)
+	(only-if (member "Buzz" (fizzbuzz (list n)) :test #'string=)
+		 (test (member "Buzz" (fizzbuzz (list (- n)))
+			       :test #'string=)))))
+
 		   
 	   
     

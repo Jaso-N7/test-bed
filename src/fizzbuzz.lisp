@@ -31,11 +31,9 @@ Otherwise returns NUM as a string."
 	  (t  (format nil "~A" num)))))
 
 (defun fizzer (num)
-  "Checks the number NUM. If it is a MOD of either 3 or 5, returns 'Fizz'
-or 'Buzz' respectively. If MOD by both 3 and 5, return 'FizzBuzz'.
+  "Checks the number NUM. If it is a MOD of either 3, returns 'Fizz'.
 Otherwise returns NUM as a string."
-  (let ((fizzy (= 0 (funcall mod3 num)))
-	(buzzy (= 0 (funcall mod5 num))))
+  (let ((fizzy (= 0 (funcall mod3 num))))
     (if fizzy
 	"Fizz"
 	(format nil "~A" num))))
@@ -44,7 +42,7 @@ Otherwise returns NUM as a string."
   "Consumes a range of numbers in LST, but for multiples of three (3), print 'Fizz'
 instead of the number and for the multiples of five(5) print 'Buzz'"
   ;;  (mapcar #'fizzbuzzer lst))
-  (mapcar #'fizzer lst))
+  (mapcar #'fizzbuzzer lst))
 
 	      
       
