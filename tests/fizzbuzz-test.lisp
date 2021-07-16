@@ -50,7 +50,7 @@
     ;; Use cases:-
     ;; Searches - for example, should results be different for a different sort order?
 
-    (named "Stability on FizzBuzz"
+    (named "Stability of Fizz and Buzz"
       (for-all (m) 
 	;; For any number positive I, the invers -I, should return the same result
 	(only-if (member "Fizz" (fizzbuzz (list m)) :test #'string=)
@@ -61,7 +61,6 @@
 		 (test (member "Buzz" (fizzbuzz (list (- n)))
 			       :test #'string=)))))
 
-		   
 	   
     
     ))
