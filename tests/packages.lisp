@@ -3,5 +3,5 @@
         :test-bed
         :cl-quickcheck)
   (:export :check!
-	   :fizzbuzz.check)
+	   :check-fizzbuzz)
   (:documentation "Property-Based Tests."))
