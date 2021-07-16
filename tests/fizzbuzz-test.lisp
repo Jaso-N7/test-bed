@@ -49,7 +49,13 @@
     ;; SUT and the other after doesn't change the outcome?
     ;; Use cases:-
     ;; Searches - for example, should results be different for a different sort order?
+    
+    (named "Different paths, same destination"
+      (for-all ((lis (a-list an-integer)))
+	(is= (reverse (fizzbuzz lis))
+	     (fizzbuzz (reverse lis)))))
 
+    
     (named "Stability of Fizz and Buzz"
       (for-all (m) 
 	;; For any number positive I, the invers -I, should return the same result
