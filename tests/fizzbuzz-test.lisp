@@ -1,20 +1,9 @@
-(defpackage fizzbuzz/tests
-  (:use :cl
-        :fizzbuzz
-        :cl-quickcheck)
-  (:export :check!)
-  (:documentation "Property-Based Tests."))
-(in-package :fizzbuzz/tests)
 
-;; NOTE: To run this test file, execute `(asdf:test-system :fizzbuzz)' in your Lisp.
+(in-package :test-bed/tests)
 
-(defun check! ()
-  "Run ALL tests."
-  ;; May do a seperate one for Example Based / Unit Tests
-  ; (run-units)
-  (run-pbts))
+;; NOTE: To run this test file, execute `(asdf:test-system :test-bed)' in your Lisp.
 
-(defun run-pbts ()
+(defun check-fizzbuzz ()
   "All property based tests to be run."
   (quickcheck
 ;;;**** Strategies for identifying properties ****
@@ -64,8 +53,11 @@
     (named "Stability of FizzBuzz"
       (for-all ((i an-integer))
 	;; For any number positive I, the invers -I, should return the same result
-	(test (equal (member "Fizz" (fizzbuzz (list i)) :test #'string=)
-		     (member "Fizz" (fizzbuzz (list (- i))) :test #'string=)))))
+	(test (and (equal (member "Fizz" (fizzbuzz (list i)) :test #'string=)
+			  (member "Fizz" (fizzbuzz (list (- i))) :test #'string=))
+		   (equal (member "Buzz" (fizzbuzz (list i)) :test #'string=)
+			  (member "Buzz" (fizzbuzz (list (- i))) :test #'string=))))))
+		   
 	   
     
     ))
