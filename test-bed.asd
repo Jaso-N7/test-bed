@@ -22,6 +22,7 @@
                 ((:file "packages")
 		 (:file "fizzbuzz-test")
 		 (:file "unit-tests")
+		 (:file "pbt-test-ch2")
 		 (:file "tests"))))
   :description "Test system for TEST-BED"
   :perform (test-op (op c) (symbol-call :test-bed/tests :check!)))
