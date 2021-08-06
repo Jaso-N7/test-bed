@@ -3,11 +3,11 @@
   :author "Jason S. Robinson"
   :license ""
   :depends-on ()
-  :serial t
   :components ((:module "src"
                 :components
                 ((:file "packages")
-		 (:file "fizzbuzz"))))
+		 (:file "fizzbuzz" :depends-on ("packages"))
+		 (:file "proper-ch2" :depends-on ("packages")))))
   :description "Sample application(s) used for Property-Based Testing."
   :in-order-to ((test-op (test-op "test-bed/tests"))))
 
@@ -21,6 +21,7 @@
                 :components
                 ((:file "packages")
 		 (:file "fizzbuzz-test")
+		 (:file "unit-tests")
 		 (:file "tests"))))
   :description "Test system for TEST-BED"
   :perform (test-op (op c) (symbol-call :test-bed/tests :check!)))

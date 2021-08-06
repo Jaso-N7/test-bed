@@ -59,8 +59,6 @@
       (for-all ((lis (a-list an-integer)))
 	(is= (length lis)
 	     (length (fizzbuzz lis)))))
-
-    
     
     (named "Stability of Fizz and Buzz"
       (for-all (m) 
@@ -72,7 +70,5 @@
 	(only-if (member "Buzz" (fizzbuzz (list n)) :test #'string=)
 		 (test (member "Buzz" (fizzbuzz (list (- n)))
 			       :test #'string=)))))
-
-	   
-    
+   
     ))

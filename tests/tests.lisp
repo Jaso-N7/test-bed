@@ -4,5 +4,6 @@
 (defun check! ()
   "Run ALL tests."
   ;; May do a seperate one for Example Based / Unit Tests
-  ; (run-units)
+  (run-units)
   (check-fizzbuzz))
+;  (check-pbt-ch2))

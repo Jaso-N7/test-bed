@@ -10,10 +10,10 @@
       (mod i n)))
 
 (defparameter mod3 (modn 3)
-  "")
+  "Mod N of 3")
 
 (defparameter mod5 (modn 5)
-  "")
+  "Mod N of 5")
 
 
 ;;; FUNCTIONS
@@ -42,7 +42,5 @@ Otherwise returns NUM as a string."
   "Consumes a range of numbers in LST, but for multiples of three (3), print 'Fizz'
 instead of the number and for the multiples of five(5) print 'Buzz'"
   ;;  (mapcar #'fizzbuzzer lst))
-  (mapcar #'fizzbuzzer lst))
-
-	      
+  (mapcar #'fizzbuzzer lst)) 
       
