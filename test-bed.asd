@@ -7,7 +7,7 @@
                 :components
                 ((:file "packages")
 		 (:file "fizzbuzz" :depends-on ("packages"))
-		 (:file "proper-ch2" :depends-on ("packages")))))
+		 (:file "pbt" :depends-on ("packages")))))
   :description "Sample application(s) used for Property-Based Testing."
   :in-order-to ((test-op (test-op "test-bed/tests"))))
 
@@ -22,7 +22,7 @@
                 ((:file "packages")
 		 (:file "fizzbuzz-test")
 		 (:file "unit-tests")
-		 (:file "pbt-test-ch2")
+		 (:file "pbt-test")
 		 (:file "tests"))))
   :description "Test system for TEST-BED"
   :perform (test-op (op c) (symbol-call :test-bed/tests :check!)))
