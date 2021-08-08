@@ -35,7 +35,9 @@
 
     (named "no element added"
       (for-all ((l (a-list an-integer)))
-	(let ((sorted (sort l #'<)))
+	(let* ((fn (random-choice (function <)
+				 (function >)))
+	       (sorted (sort l fn)))
 	  (mapc #'(lambda (item)
 		    (is member item l))
 		sorted))))
