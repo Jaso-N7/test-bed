@@ -23,7 +23,8 @@
 
     (named "a sorted list has ordered pairs"
       (for-all ((lis (a-list an-integer)))
-	(let ((fn (random-choice #'< #'>)))
+	(let ((fn (random-choice (function <)
+				 (function >))))
 	  (test (ordered (sort lis fn) :test fn)))))
 
     (named "a sorted list keeps its size"
