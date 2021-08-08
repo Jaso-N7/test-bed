@@ -31,20 +31,18 @@
       (for-all ((l (a-list an-integer)))
 	(let ((fn (random-choice (function <)
 				 (function >))))
-	(is= (length l) (length (sort l fn))))))
+	  (is= (length l) (length (sort l fn))))))
 
-    (named "no element added"
+    (named "no element added."
       (for-all ((l (a-list an-integer)))
-	(let* ((fn (random-choice (function <)
-				 (function >)))
-	       (sorted (sort l fn)))
-	  (mapc #'(lambda (item)
-		    (is member item l))
+	(let ((sorted (sort (copy-list l) #'<)))
+	  (mapc #'(lambda (element)
+		    (is member element l))
 		sorted))))
 
     (named "no element deleted"
       (for-all ((l (a-list an-integer)))
-	(let ((sorted (sort l #'<)))
+	(let ((sorted (sort (copy-list l) #'<)))
 	  (mapc #'(lambda (item)
 		    (is member item sorted))
 		l))))
