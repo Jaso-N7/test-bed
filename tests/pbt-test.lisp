@@ -27,9 +27,11 @@
 				 (function >))))
 	  (test (ordered (sort lis fn) :test fn)))))
 
-    (named "a sorted list keeps its size"
+    (named "a sorted list keeps its size, regardless of ordering."
       (for-all ((l (a-list an-integer)))
-	(is= (length l) (length (sort l #'<)))))
+	(let ((fn (random-choice (function <)
+				 (function >))))
+	(is= (length l) (length (sort l fn))))))
 
     (named "no element added"
       (for-all ((l (a-list an-integer)))
