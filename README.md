@@ -18,7 +18,7 @@
 
 ## Usage
 
-\`\`\`(asdf:test-system "test-bed")\`\`\`
+```(asdf:test-system "test-bed")```
 
 
 <a id="orgb511d54"></a>
@@ -30,19 +30,19 @@
 
 ### STEP 1: Get CL-QUICKCHECK
 
-\`\`\`(ql:quickload "cl-quickcheck")\`\`\`
+```(ql:quickload "cl-quickcheck")```
 
 
 <a id="orga051b16"></a>
 
 ### STEP 2: Clone Directory
 
-\`\`\`git clone <https://github.com/Jaso-N7/test-bed.git> ~/quicklisp/local-projects\`\`\`
+```git clone <https://github.com/Jaso-N7/test-bed.git> ~/quicklisp/local-projects```
 
 
 <a id="orgbe4fd88"></a>
 
 ### STEP 3: Load project
 
-\`\`\`(asdf:load-system "test-bed")\`\`\`
+```(asdf:load-system "test-bed")```
 
