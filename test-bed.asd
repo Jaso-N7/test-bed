@@ -26,4 +26,4 @@
 		 (:file "tests"))))
   :description "Test system for TEST-BED"
   :perform (test-op (op c) (cl-quickcheck:quickcheck
-					(test-bed/tests:check!))))
+			     (symbol-call :test-bed/tests :check!))))
