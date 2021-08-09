@@ -23,7 +23,7 @@
 		 (:file "fizzbuzz-test")
 		 (:file "unit-tests")
 		 (:file "pbt-test")
-		 (:file "tests"))))
+		 (:file "test-suite"))))
   :description "Test system for TEST-BED"
   :perform (test-op (op c) (cl-quickcheck:quickcheck
 			     (symbol-call :test-bed/tests :check!))))
