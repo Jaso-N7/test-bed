@@ -5,7 +5,7 @@
 
 (defun check-fizzbuzz ()
   "All property based tests to be run."
-  (quickcheck
+
 ;;;**** Strategies for identifying properties ****
 
 ;;; TEST ORACLE
@@ -71,4 +71,4 @@
 		 (test (member "Buzz" (fizzbuzz (list (- n)))
 			       :test #'string=)))))
    
-    ))
+    )

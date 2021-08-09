@@ -6,7 +6,6 @@
 
 (defun check-biggest ()
   "Properties for testing BIGGEST."
-  (quickcheck
 
     ;; Modelling / Oracle
     (named "finds biggest element"
@@ -47,8 +46,11 @@
 		    (is member item sorted))
 		l))))
 
-
-    ))
+    #|
+    (named "symmetric endcoding/decoding"
+      (for-all ((lats (a-list
+|#
+    )
 
 ;;; HELPERS / MODELS
 
@@ -78,3 +80,11 @@ Defaults to an ascending ordering."
 	 (mapcar #'(lambda (expr)
 		     `(,(incf key) ,expr))
 		 exprs))))
+
+(defun ncode (term)
+  "Model Encoder."
+  (error "Not yet implemented"))
+
+(defun dcode (term)
+  "Model Decoder."
+  (error "Not yet implemented."))

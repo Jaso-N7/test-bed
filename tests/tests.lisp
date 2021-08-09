@@ -3,6 +3,6 @@
 
 (defun check! ()
   "Run ALL tests."
-  (run-units)
-;  (check-fizzbuzz)
-  (check-biggest))
+    (run-units)
+    ;(check-fizzbuzz)
+    (check-biggest))
