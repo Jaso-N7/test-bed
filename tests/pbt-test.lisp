@@ -83,8 +83,10 @@ Defaults to an ascending ordering."
 
 (defun ncode (term)
   "Model Encoder."
+  (declare (ignore term))
   (error "Not yet implemented"))
 
 (defun dcode (term)
   "Model Decoder."
+  (declare (ignore term))
   (error "Not yet implemented."))
