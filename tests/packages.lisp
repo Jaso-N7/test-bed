@@ -3,8 +3,4 @@
   (:use :cl
         :test-bed
         :cl-quickcheck)
-  (:export :check!
-	   :run-units
-	   :check-fizzbuzz
-	   :check-biggest))
-
+  (:export #:check!))
