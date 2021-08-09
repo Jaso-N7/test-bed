@@ -1,5 +1,19 @@
-* Fizzbuzz  - Sample application used for Property-Based Testing.
+*  Practicing Property-Based Testing 
 
 ** Usage
 
+```(asdf:test-system "test-bed")```
+
 ** Installation
+
+*** STEP 1: Get CL-QUICKCHECK
+
+```(ql:quickload "cl-quickcheck")```
+
+*** STEP 2: Clone Directory
+
+```git clone https://github.com/Jaso-N7/test-bed.git ~/quicklisp/local-projects```
+
+*** STEP 3: Load project
+
+```(asdf:load-system "test-bed")```
