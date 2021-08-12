@@ -1,6 +1,8 @@
-;;;; Properties for testing BIGGEST
+;;;; Properties & Helper functions for testing BIGGEST [pbt.lisp]
 
 (in-package :test-bed/tests)
+
+
 
 ;;; PROPERTIES
 
@@ -24,13 +26,13 @@
       (for-all ((lis (a-list an-integer)))
 	(let ((fn (random-choice (function <)
 				 (function >))))
-	  (test (ordered (sort lis fn) :test fn)))))
+	  (is ordered (sort (copy-list lis) fn) :test fn))))
 
     (named "a sorted list keeps its size, regardless of ordering."
       (for-all ((l (a-list an-integer)))
 	(let ((fn (random-choice (function <)
 				 (function >))))
-	  (is= (length l) (length (sort l fn))))))
+	  (is= (length l) (length (sort (copy-list l) fn))))))
 
     (named "no element added."
       (for-all ((l (a-list an-integer)))
@@ -73,13 +75,6 @@ Defaults to an ascending ordering."
 	      (ordered (cdr lis) :test test)))))
 
 
-(defmacro random-choice (&rest exprs)
-  "Courtesy of Paul Graham's ANSI CL Macros pg 170."
-  `(case (random, (length exprs))
-     ,@(let ((key -1))
-	 (mapcar #'(lambda (expr)
-		     `(,(incf key) ,expr))
-		 exprs))))
 
 (defun ncode (term)
   "Model Encoder."

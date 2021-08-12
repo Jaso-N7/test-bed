@@ -1,6 +1,15 @@
 
 (in-package :test-bed/tests)
 
+(eval-when (:execute :compile-toplevel :load-toplevel)
+  (defmacro random-choice (&rest exprs)
+    "Courtesy of Paul Graham's ANSI CL - Macros pg 170."
+    `(case (random, (length exprs))
+       ,@(let ((key -1))
+	   (mapcar #'(lambda (expr)
+		       `(,(incf key) ,expr))
+		   exprs)))))
+
 (defparameter *skipped*
   (vector #'check-fizzbuzz)
   "Do not run these tests.")
